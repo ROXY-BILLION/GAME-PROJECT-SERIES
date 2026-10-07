@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tic-Tac-Toe | Player vs AI</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Intro screen -->
+    <div class="intro-modal" id="intro-modal">
+        <div class="intro-card">
+
+            <div class="intro-icon">
+                <i class="fa-solid fa-gamepad"></i>
+            </div>
+
+            <p class="intro-label">WELCOME TO</p>
+
+            <h1>TIC<span>•</span>TAC<span>•</span>TOE</h1>
+
+            <p class="intro-subtitle">PLAYER VS AI</p>
+
+            <div class="loader">
+                <div class="loader-ring">
+                    <span class="loader-x">X</span>
+                    <span class="loader-o">O</span>
+                </div>
+            </div>
+
+            <p class="loading-status" id="loading-status">
+                INITIALIZING GAME
+            </p>
+
+            <button class="start-button" id="start-game">
+                START GAME
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- Main game -->
+    <main class="game-container" id="game-container">
+
+        <header class="game-header">
+
+            <div>
+                <p class="eyebrow">PLAYER VS AI</p>
+
+                <h1>Tic-Tac-Toe</h1>
+
+                <p class="game-description">
+                    Outsmart the AI and claim three in a row.
+                </p>
+            </div>
+
+            <div class="header-icon">
+                <i class="fa-solid fa-gamepad"></i>
+            </div>
+
+        </header>
+
+
+        <!-- Game status -->
+        <section class="status-card">
+
+            <div class="turn-indicator">
+                <span class="status-dot"></span>
+
+                <span id="game-status">
+                    Your turn
+                </span>
+            </div>
+
+            <div class="player-symbol">
+                <span>You</span>
+                <strong>X</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Scoreboard -->
+        <section class="scoreboard">
+
+            <div class="score-card player-score">
+                <span class="score-label">PLAYER</span>
+
+                <strong id="player-score">
+                    0
+                </strong>
+
+                <span class="score-icon">
+                    <i class="fa-solid fa-user"></i>
+                </span>
+            </div>
+
+
+            <div class="score-card draw-score">
+                <span class="score-label">DRAWS</span>
+
+                <strong id="draw-score">
+                    0
+                </strong>
+
+                <span class="score-icon">
+                    <i class="fa-solid fa-equals"></i>
+                </span>
+            </div>
+
+
+            <div class="score-card ai-score">
+                <span class="score-label">AI</span>
+
+                <strong id="ai-score">
+                    0
+                </strong>
+
+                <span class="score-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </span>
+            </div>
+
+        </section>
+
+
+        <!-- Board -->
+        <section class="board-wrapper">
+
+            <div class="board" id="board">
+
+                <button class="cell" data-index="0"></button>
+                <button class="cell" data-index="1"></button>
+                <button class="cell" data-index="2"></button>
+
+                <button class="cell" data-index="3"></button>
+                <button class="cell" data-index="4"></button>
+                <button class="cell" data-index="5"></button>
+
+                <button class="cell" data-index="6"></button>
+                <button class="cell" data-index="7"></button>
+                <button class="cell" data-index="8"></button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Controls -->
+        <section class="controls">
+
+            <button class="control-button secondary" id="reset-match">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset Match
+            </button>
+
+            <button class="control-button primary" id="new-round">
+                New Round
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- Result modal -->
+    <div class="modal-overlay" id="result-modal">
+
+        <div class="result-modal">
+
+            <button class="modal-close" id="close-result">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="result-icon" id="result-icon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <p class="modal-label">ROUND COMPLETE</p>
+
+            <h2 id="result-title">
+                You Win!
+            </h2>
+
+            <p id="result-message">
+                Great move. You connected three in a row.
+            </p>
+
+            <button class="modal-button" id="play-again">
+                Play Again
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Reset confirmation modal -->
+    <div class="modal-overlay" id="reset-modal">
+
+        <div class="reset-modal">
+
+            <div class="reset-icon">
+                <i class="fa-solid fa-rotate-left"></i>
+            </div>
+
+            <h2>Reset Match?</h2>
+
+            <p>
+                Your current scores will be cleared and the match
+                will start again.
+            </p>
+
+            <div class="reset-actions">
+
+                <button class="modal-button cancel" id="cancel-reset">
+                    Cancel
+                </button>
+
+                <button class="modal-button danger" id="confirm-reset">
+                    Reset Match
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
